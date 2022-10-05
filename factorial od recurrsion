@@ -1,0 +1,18 @@
+#include<stdio.h>
+Main()
+{
+	Int n,res;
+	Printf(“Enter n value”);
+	Scanf(“%d”,&n);
+	Res=fact(n);
+	Printf(“Result %d “,res);
+}
+Int fact (int n)
+{
+	Int res;
+	If(n==0)
+		Res=1;
+	Else
+		Res=n*fact(n-1);
+		Return res;
+}
