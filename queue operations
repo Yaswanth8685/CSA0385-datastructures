@@ -1,0 +1,59 @@
+#include<stdio.h>
+#define n 5
+int queue[n];
+int front=0;
+int rear=0;
+void enqueue()
+{
+
+    if(n==rear)
+    {
+        printf("queue is full");
+    }
+    else
+    {
+        int x;
+        printf("Enter the data ");
+        scanf("%d",&x);
+        queue[rear]=x;
+        rear++;
+    }
+}
+void dequeue()
+{
+    if(front==rear)
+    {
+        printf("queue is empty");
+    }
+    else
+    {
+        printf("deleted element is %d",queue[front]);
+    }
+}
+void display()
+{
+    if(front==rear)
+    {
+        printf("empty");
+    }
+    else
+    {
+        int i;
+        printf("\nData is:");
+        for(i=front+1;i<rear;i++)
+        {
+            printf("%d ",queue[i]);
+        }
+    }
+}
+main()
+{
+    printf("Enter the data into the queue\n");
+     enqueue();
+     enqueue();
+     enqueue();
+     dequeue();
+     display();
+     printf("In the queue");
+}
+
