@@ -1,0 +1,70 @@
+#include<stdio.h>
+void display();
+void insert();
+void delet();
+
+int a[10],n,i;
+
+void main()
+{
+    printf("Enter the value of n ");
+    scanf("%d",&n);
+    display();
+    insert();
+    delet();
+
+
+}
+
+void display()
+{
+
+    for(i=0;i<n;i++)
+    {
+        printf("element %d:",i);
+        scanf("%d",&a[i]);
+
+    }
+    printf("The elements are\n");
+    for(i=0;i<n;i++)
+    {
+        printf("Element %d = %d\n",i,a[i]);
+    }
+}
+void insert()
+{
+    int pos,data;
+    printf("Enter the data you want to insert ");
+    scanf("%d",&data);
+    printf("Enter the position ");
+    scanf("%d",&pos);
+    for(i=n;i>=pos-1;i--)
+    {
+        a[i+1]=a[i];
+    }
+    a[pos]=data;
+    n++;
+    printf("The elements after inserting\n");
+    for(i=0;i<n;i++)
+    {
+        printf("Element %d = %d\n",i,a[i]);
+    }
+}
+
+void delet()
+{
+    int pos;
+    printf("Enter the position of the data which you want to delete: ");
+    scanf("%d",&pos);
+    for(i=pos-1;i<n-1;i++)
+    {
+        a[i]=a[i+1];
+    }
+    n--;
+    printf("The elements after deleting\n");
+    for(i=0;i<n;i++)
+    {
+        printf("Element %d = %d\n",i,a[i]);
+    }
+}
+
